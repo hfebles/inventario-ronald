@@ -32,9 +32,9 @@ Route::get('/products/{id}/delete', [ProductosController::class, 'deleteProduct'
 Route::post('/products/discount', [ProductosController::class, 'discountProduct'])->middleware('auth');
 
 
-Route::post('/products/obtenerDatosProductos', [ProductosController::class, 'obtenerDatosProductos'])->middleware('auth');
-Route::post('/products/calcular', [ProductosController::class, 'calcularProductos'])->middleware('auth');
-Route::post('/products/valida-codigo', [ProductosController::class, 'validarCodigo'])->middleware('auth');
+Route::post('products/obtenerDatosProductos', [ProductosController::class, 'obtenerDatosProductos'])->middleware('auth');
+Route::post('products/calcular', [ProductosController::class, 'calcularProductos'])->middleware('auth');
+Route::post('products/valida-codigo', [ProductosController::class, 'validarCodigo'])->middleware('auth');
 
 
 Route::group(['middleware' => 'auth'], function(){
