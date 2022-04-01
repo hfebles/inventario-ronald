@@ -127,6 +127,23 @@ class ProductosController extends Controller
         
     }
 
+    public function queryProducts(Request $request){
+        
+        $query = $request->query; 
+
+        //return response()->json($request);
+
+        $lista = Productos::where('nombre_producto','like','%'.$request['query'].'%')
+        ->orWhere('codigo_producto','like','%'.$request['query'].'%')->get();
+
+        return response()->json(
+            [
+                'lista' => $lista,
+                'success' => true
+            ]
+        );
+    }
+
 
     public function validarCodigo(Request $request){
 
