@@ -62,7 +62,7 @@
 function validarCodigo(x){
     const csrfToken = "{{ csrf_token() }}";
 
-    fetch('products/valida-codigo', {
+    fetch('/products/valida-codigo', {
            method: 'POST',
            body: JSON.stringify({codigo: x}),
            headers: {

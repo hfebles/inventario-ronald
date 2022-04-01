@@ -87,7 +87,7 @@ function obtenerDatosProductos(x){
     const csrfToken = "{{ csrf_token() }}";    
     var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {});
 
-    fetch('products/obtenerDatosProductos', {
+    fetch('/products/obtenerDatosProductos', {
            method: 'POST',
            body: JSON.stringify({id_producto: x}),
            headers: {
@@ -122,7 +122,7 @@ function obtenerDatosProductos(x){
 function calculaDisp(x, y){
     const csrfToken = "{{ csrf_token() }}";
 
-    fetch('products/calcular', {
+    fetch('/products/calcular', {
            method: 'POST',
            body: JSON.stringify({id_producto: y, cantidad: x}),
            headers: {
